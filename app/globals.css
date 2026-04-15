@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/* ── Scroll smoothness ─────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+  /* Momentum scrolling on iOS */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Pre-promote key animated elements to their own GPU compositor layer.
+   This prevents the browser from triggering expensive repaints on scroll. */
+.gpu-layer {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Use contain on heavy sections to limit paint/
